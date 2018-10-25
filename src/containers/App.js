@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 
-import CardList from './CardList';
+import CardList from '../components/CardList';
 import SearchBox from './SearchBox';
 import './App.css';
+import Scroll from '../components/Scroll';
+
+
 const API = 'https://jsonplaceholder.typicode.com/users';
 class App extends Component {
     state = {
@@ -38,7 +41,9 @@ class App extends Component {
             <div className="tc">
                 <h1 className="f1">RoboFriends</h1>
                 <SearchBox search={this.searchRobots} />
-                <CardList robots={this.filterRobots(data, filter)} />
+                <Scroll>
+                    <CardList robots={this.filterRobots(data, filter)} />
+                </Scroll>
             </div>
         )
     }
