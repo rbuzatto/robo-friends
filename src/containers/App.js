@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import CardList from '../components/CardList';
+import Header from '../components/Header';
 import ErrorBoundry from '../components/ErrorBoundry';
 import SearchBox from './SearchBox';
 import './App.css';
@@ -36,7 +37,7 @@ class App extends Component {
 
         return data.length === 0 ? <h1 className="tc">Loading...</h1> : (
             <div className="tc">
-                <h1 className="f1">RoboFriends</h1>
+                <Header />
                 <SearchBox search={this.props.searchRobots} />
                 <Scroll>
                     <ErrorBoundry>
